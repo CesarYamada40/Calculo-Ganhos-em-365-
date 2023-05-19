@@ -1,0 +1,18 @@
+preco_acao = 200
+lucro_por_acao = 5
+acoes_alvo = 100
+
+acoes_atuais = 1
+lucro_atual = 0
+dias = 0
+
+while acoes_atuais < acoes_alvo:
+    dias += 1
+    lucro_atual += acoes_atuais * lucro_por_acao
+    if lucro_atual >= preco_acao:
+        lucro_atual -= preco_acao
+        acoes_atuais += 1
+        print(f'Dia {dias}: Comprada nova ação. Total de ações: {acoes_atuais}. Lucro acumulado: R${lucro_atual}')
+
+print(f'\nLevará {dias} dias para atingir {acoes_alvo} ações.')
+print(f'O lucro acumulado até esse dia será de R${lucro_atual}.')
